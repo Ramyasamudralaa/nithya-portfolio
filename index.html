@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Portfolio of Velicharla Nithya, B.Sc. Computer Science and Cloud Computing student at Loyola Academy, Hyderabad.">
+<title>Velicharla Nithya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+  :root{
+    --bg:#EFF1F4; --surface:#FFFFFF; --surface-2:#F7F8FA;
+    --ink:#141A22; --ink-soft:#3C4653; --muted:#5E6975;
+    --line:#D6DCE3; --line-soft:#E6EAEF;
+    --accent:#9A6E18; --accent-2:#1C6B67;
+    --shadow:0 1px 2px rgba(20,26,34,.05), 0 8px 24px -16px rgba(20,26,34,.25);
+    --display:"Familjen Grotesk", "Segoe UI", system-ui, sans-serif;
+    --body:"Source Serif 4", Georgia, "Times New Roman", serif;
+    --mono:"IBM Plex Mono", ui-monospace, Consolas, monospace;
+    --maxw:1180px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0E131A; --surface:#161D26; --surface-2:#1B232E;
+      --ink:#E9EEF4; --ink-soft:#C2CCD7; --muted:#93A0AE;
+      --line:#27313D; --line-soft:#1F2833;
+      --accent:#D9A441; --accent-2:#4FAEA7;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -18px rgba(0,0,0,.8);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0E131A; --surface:#161D26; --surface-2:#1B232E;
+    --ink:#E9EEF4; --ink-soft:#C2CCD7; --muted:#93A0AE;
+    --line:#27313D; --line-soft:#1F2833;
+    --accent:#D9A441; --accent-2:#4FAEA7;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -18px rgba(0,0,0,.8);
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:var(--body); font-size:17px; line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  h1,h2,h3,.label,nav,.chip,.score{font-family:var(--display)}
+  h1,h2,h3{text-wrap:balance; margin:0; line-height:1.15; letter-spacing:-.015em}
+
+  .shell{max-width:var(--maxw); margin:0 auto; padding:0 28px; display:grid; grid-template-columns:1fr}
+  @media (min-width:960px){
+    .shell{grid-template-columns:330px 1fr; gap:72px; padding:0 40px}
+  }
+
+  .rail{padding:56px 0 32px}
+  @media (min-width:960px){
+    .rail{position:sticky; top:0; height:100vh; padding:72px 0 48px;
+      display:flex; flex-direction:column; gap:26px}
+  }
+  .eyebrow{
+    font-family:var(--mono); font-size:11.5px; letter-spacing:.18em;
+    text-transform:uppercase; color:var(--accent); margin:0 0 14px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::after{content:""; flex:1; height:1px; background:var(--line)}
+  .name{font-size:clamp(38px,6vw,54px); font-weight:700}
+  .name .giv{display:block; color:var(--accent)}
+  .name .sur{display:block; color:var(--ink)}
+  .role{font-family:var(--mono); font-size:13px; color:var(--ink-soft); margin:18px 0 0; line-height:1.7}
+  .role span{display:block}
+  .rule{height:1px; background:var(--line); margin:24px 0}
+  nav ul{list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:6px 18px}
+  @media (min-width:960px){nav ul{flex-direction:column; gap:2px}}
+  nav a{
+    text-decoration:none; font-size:14px; color:var(--muted);
+    display:inline-flex; align-items:center; gap:10px; padding:4px 0;
+    transition:color .18s ease;
+  }
+  nav a::before{content:""; width:14px; height:1px; background:var(--line); transition:width .18s ease, background .18s ease}
+  @media (max-width:959px){nav a::before{display:none}}
+  nav a:hover, nav a:focus-visible, nav a.on{color:var(--ink)}
+  nav a:hover::before, nav a.on::before{width:28px; background:var(--accent)}
+  .rail-foot{margin-top:auto; font-family:var(--mono); font-size:12px; color:var(--muted)}
+  .rail-foot a{display:block; text-decoration:none; padding:3px 0; color:var(--muted)}
+  .rail-foot a:hover{color:var(--accent)}
+
+  main{padding:20px 0 96px}
+  @media (min-width:960px){main{padding:72px 0 120px}}
+  section{padding:38px 0; scroll-margin-top:24px}
+  section + section{border-top:1px solid var(--line-soft)}
+  .label{font-family:var(--mono); font-size:11.5px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); margin:0 0 20px}
+  .lede{font-size:clamp(21px,2.3vw,26px); line-height:1.55; color:var(--ink); max-width:34ch; margin:0}
+  .lede em{font-style:normal; color:var(--accent)}
+  p{max-width:65ch; color:var(--ink-soft); margin:0 0 16px}
+  p:last-child{margin-bottom:0}
+
+  .grid{display:grid; gap:14px}
+  .skills{grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+  .card{
+    background:var(--surface); border:1px solid var(--line); border-radius:4px;
+    padding:16px 18px; box-shadow:var(--shadow); position:relative; overflow:hidden;
+  }
+  .card::before{content:""; position:absolute; left:0; top:0; bottom:0; width:2px; background:var(--accent); opacity:0; transition:opacity .2s ease}
+  .card:hover::before{opacity:1}
+  .card h3{font-size:16px; font-weight:600; margin:0 0 4px}
+  .card .note{font-family:var(--mono); font-size:11.5px; color:var(--muted); letter-spacing:.04em; margin:0}
+
+  .edu-row{display:grid; grid-template-columns:1fr auto; gap:4px 24px; align-items:baseline; padding:16px 0; border-bottom:1px solid var(--line-soft)}
+  .edu-row:last-child{border-bottom:0}
+  .edu-row h3{font-size:18px; font-weight:600}
+  .edu-row .where{font-family:var(--mono); font-size:12.5px; color:var(--muted); grid-column:1; margin:0}
+  .edu-row .score{font-weight:700; font-size:21px; color:var(--accent); font-variant-numeric:tabular-nums; grid-row:span 2; align-self:center}
+
+  .ach{list-style:none; margin:0; padding:0; display:grid}
+  .ach li{display:grid; grid-template-columns:auto 1fr; gap:16px; align-items:start; padding:16px 0; border-bottom:1px solid var(--line-soft)}
+  .ach li:last-child{border-bottom:0}
+  .ach .mark{font-family:var(--mono); font-size:11px; letter-spacing:.1em; color:var(--accent-2); border:1px solid var(--line); border-radius:2px; padding:3px 7px; white-space:nowrap; margin-top:3px}
+  .ach strong{font-family:var(--display); font-weight:600; color:var(--ink); display:block}
+  .ach .d{color:var(--muted); font-size:15.5px}
+
+  .chips{display:flex; flex-wrap:wrap; gap:8px}
+  .chip{font-size:13.5px; padding:7px 13px; border:1px solid var(--line); border-radius:999px; background:var(--surface-2); color:var(--ink-soft)}
+
+  .contact{background:var(--surface); border:1px solid var(--line); border-radius:6px; padding:28px; display:grid; gap:20px; box-shadow:var(--shadow)}
+  @media (min-width:640px){.contact{grid-template-columns:1fr 1fr}}
+  .contact a, .contact .v{
+    text-decoration:none; display:block; font-family:var(--mono); font-size:15px;
+    color:var(--ink); word-break:break-word; border-bottom:1px solid transparent;
+    transition:border-color .18s ease, color .18s ease; width:fit-content;
+  }
+  .contact a:hover{color:var(--accent); border-color:var(--accent)}
+  .contact .k{font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:6px}
+
+  .theme-btn{
+    position:fixed; right:16px; top:16px; z-index:20;
+    font-family:var(--mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase;
+    background:var(--surface); color:var(--muted); border:1px solid var(--line);
+    border-radius:999px; padding:8px 14px; cursor:pointer;
+  }
+  .theme-btn:hover{color:var(--accent); border-color:var(--accent)}
+
+  :focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px}
+
+  .rise{opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease}
+  .rise.in{opacity:1; transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .rise{opacity:1; transform:none; transition:none}
+  }
+</style>
+</head>
+<body>
+<button class="theme-btn" id="themeBtn" type="button" aria-label="Switch colour theme">Theme</button>
+
+<div class="shell">
+  <header class="rail">
+    <div>
+      <p class="eyebrow">Portfolio</p>
+      <h1 class="name"><span class="giv">Nithya</span><span class="sur">Velicharla</span></h1>
+      <p class="role">
+        <span>B.Sc. Computer Science &amp; Cloud Computing</span>
+        <span>Loyola Academy &middot; Hyderabad</span>
+        <span>NCC Army Wing Cadet</span>
+      </p>
+    </div>
+    <div class="rule"></div>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Technical Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#strengths">Core Strengths</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="rail-foot">
+      <a href="mailto:velicharlanithya@gmail.com">velicharlanithya@gmail.com</a>
+      <a href="tel:+918712599143">+91 87125 99143</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="rise">
+      <p class="label">Professional Summary</p>
+      <p class="lede">Cloud computing student with the discipline of a cadet and a <em>habit of learning fast</em>.</p>
+      <p style="margin-top:22px">Motivated B.Sc. Computer Science &amp; Cloud Computing student with strong analytical, problem-solving and leadership skills. Experienced in working under pressure through NCC training and Republic Day Camp (RDC) 2026 representation.</p>
+      <p>Passionate about cloud technologies, virtualization, networking, Linux, cloud security and emerging technologies. Seeking internship opportunities to contribute technical skills while continuously learning.</p>
+    </section>
+
+    <section id="skills" class="rise">
+      <p class="label">Technical Skills</p>
+      <div class="grid skills">
+        <div class="card"><h3>Cloud Computing</h3><p class="note">Fundamentals &amp; service models</p></div>
+        <div class="card"><h3>Computer Networks</h3><p class="note">Protocols &amp; topologies</p></div>
+        <div class="card"><h3>Linux</h3><p class="note">Shell &amp; system basics</p></div>
+        <div class="card"><h3>Virtualization</h3><p class="note">VMs &amp; hypervisors</p></div>
+        <div class="card"><h3>Cloud Security</h3><p class="note">Access &amp; data protection basics</p></div>
+        <div class="card"><h3>Problem Solving</h3><p class="note">Analytical thinking</p></div>
+        <div class="card"><h3>MS Office</h3><p class="note">Word, Excel, PowerPoint</p></div>
+        <div class="card"><h3>Team Collaboration</h3><p class="note">Coordination &amp; reporting</p></div>
+      </div>
+    </section>
+
+    <section id="education" class="rise">
+      <p class="label">Education</p>
+      <div class="grid">
+        <div class="edu-row">
+          <h3>B.Sc. Computer Science &amp; Cloud Computing</h3>
+          <div class="score">Pursuing</div>
+          <p class="where">Loyola Academy, Hyderabad</p>
+        </div>
+        <div class="edu-row">
+          <h3>Intermediate</h3>
+          <div class="score">85%</div>
+          <p class="where">Board of Intermediate Education</p>
+        </div>
+        <div class="edu-row">
+          <h3>SSC</h3>
+          <div class="score">9.8 GPA</div>
+          <p class="where">Secondary School Certificate</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements" class="rise">
+      <p class="label">Achievements</p>
+      <ul class="ach">
+        <li>
+          <span class="mark">RDC 2026</span>
+          <span><strong>Represented AP &amp; Telangana Directorate, New Delhi</strong>
+          <span class="d">Selected for the Republic Day Camp, the national culmination of NCC training.</span></span>
+        </li>
+        <li>
+          <span class="mark">NCC</span>
+          <span><strong>Army Wing Cadet</strong>
+          <span class="d">Proven discipline and leadership through sustained cadet training.</span></span>
+        </li>
+        <li>
+          <span class="mark">PM RALLY</span>
+          <span><strong>PM Rally &amp; Cultural Events</strong>
+          <span class="d">Participated in the national rally and in cultural performances.</span></span>
+        </li>
+        <li>
+          <span class="mark">15 YRS</span>
+          <span><strong>Classical Dance</strong>
+          <span class="d">Fifteen years of trained practice: patience, precision and stage presence.</span></span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="strengths" class="rise">
+      <p class="label">Core Strengths</p>
+      <div class="chips">
+        <span class="chip">Leadership</span>
+        <span class="chip">Communication</span>
+        <span class="chip">Adaptability</span>
+        <span class="chip">Time Management</span>
+        <span class="chip">Quick Learning</span>
+        <span class="chip">Attention to Detail</span>
+        <span class="chip">Teamwork</span>
+        <span class="chip">Professional Ethics</span>
+      </div>
+    </section>
+
+    <section id="contact" class="rise">
+      <p class="label">Contact</p>
+      <p class="lede" style="margin-bottom:24px">Open to internships in cloud, networking and systems.</p>
+      <div class="contact">
+        <div>
+          <span class="k">Email</span>
+          <a href="mailto:velicharlanithya@gmail.com">velicharlanithya@gmail.com</a>
+        </div>
+        <div>
+          <span class="k">Phone</span>
+          <a href="tel:+918712599143">+91 87125 99143</a>
+        </div>
+        <div>
+          <span class="k">Location</span>
+          <span class="v">Hyderabad, Telangana</span>
+        </div>
+        <div>
+          <span class="k">Status</span>
+          <span class="v">Seeking internship</span>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+  (function(){
+    var root = document.documentElement, btn = document.getElementById('themeBtn');
+    function current(){
+      var set = root.getAttribute('data-theme');
+      if (set) return set;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    btn.addEventListener('click', function(){
+      root.setAttribute('data-theme', current() === 'dark' ? 'light' : 'dark');
+    });
+
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) {
+      document.querySelectorAll('.rise').forEach(function(el){ el.classList.add('in'); });
+    } else {
+      var obs = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.rise').forEach(function(el){ obs.observe(el); });
+    }
+
+    var links = Array.prototype.slice.call(document.querySelectorAll('nav a'));
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        links.forEach(function(a){ a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id); });
+      });
+    }, { rootMargin: '-25% 0px -65% 0px' });
+    document.querySelectorAll('main section').forEach(function(s){ spy.observe(s); });
+  })();
+</script>
+</body>
+</html>
